@@ -1,3 +1,22 @@
 spring:
   application:
-    name: in
+    name: couponly
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:validate}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ${ACTUATOR_ENDPOINTS:health,info}
+
+  endpoint:
+    health:
+      show-details: ${HEALTH_DETAILS:never}

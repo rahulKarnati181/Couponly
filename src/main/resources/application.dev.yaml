@@ -6,12 +6,10 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info
-
-w
